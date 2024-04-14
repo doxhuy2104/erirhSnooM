@@ -26,9 +26,10 @@ public class GamePanel extends JPanel implements Runnable{
 
     //System
     KeyHandler keyH=new KeyHandler();
-    MouseClickListener mouseClick=new MouseClickListener(this);
+    MouseClickListener mouseClick=new MouseClickListener(this,this);
     public AssetSetter assetSetter =new AssetSetter(this);
     public Sound sound=new Sound();
+    public Music music=new Music();
 
     Thread gameThread;
 
@@ -140,13 +141,13 @@ public class GamePanel extends JPanel implements Runnable{
 
     //sound
     public void playMusic(int i){
-        sound.setFile(i);
-        sound.play();
-        sound.loop();
+        music.setFile(i);
+        music.play();
+        music.loop();
     }
 
     public void stopMusic(){
-        sound.stop();
+        music.stop();
     }
 
     public void playSoundEffect(int i){

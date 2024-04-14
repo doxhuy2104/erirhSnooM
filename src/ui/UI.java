@@ -9,5 +9,6 @@ public class UI {
     public boolean inUI=true,isUI=true,exitUI=false,menu=true,side,inGame=false;
     public String mouseDirection;
     public int xL,yL,xR,yR,bX,bY;
-    public Boolean CONTINUE=false,NEWGAME=false,SETTINGS=false,CREDITS=false,cB=false,mB=false,mF=false,sF=false,sB=false;
+    public Boolean CONTINUE=false,NEWGAME=false,SETTINGS=false,CREDITS=false,cB=false,mB=false,mF=false,sF=false,sB=false,cS=false;
+    public int changeSoundC=0,cc=0;
 }

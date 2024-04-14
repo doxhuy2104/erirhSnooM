@@ -240,6 +240,7 @@ public class Player extends Entity {
         gp.collisionChecker.pToECo(this);
 
         if (mouseClick.isLeftClick()&&!isRolling) {
+
             isAttack = true;
             if(abs(mouseX)<abs(mouseY)&&mouseY<0){
                 trcStand="up";
@@ -329,7 +330,11 @@ public class Player extends Entity {
             isThink=false;
             thinkCounter=0;
             isMoving = false;
+            if(attackCounter==0){
+                gp.playSoundEffect(1);
+            }
             attackCounter++;sliceCounter++;
+
             if (sliceCounter % 5 == 0) {
                 sliceNum++;
             }

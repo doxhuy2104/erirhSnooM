@@ -10,9 +10,11 @@ public class MouseClickListener implements MouseListener, MouseMotionListener {
     private int mouseX, mouseY;
     public boolean leftClick = false;
     private Component component;
+    GamePanel gp;
 
-    public MouseClickListener(Component component) {
+    public MouseClickListener(Component component,GamePanel gp) {
         this.component = component;
+        this.gp=gp;
         component.addMouseMotionListener(this);
     }
 
@@ -39,7 +41,7 @@ public class MouseClickListener implements MouseListener, MouseMotionListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("D:\\Java\\Game\\res\\UI\\normal.png");
+        Image image = toolkit.getImage("D:\\Java\\ErihsNoom\\res\\UI\\normal.png");
         Point hotspot = new Point(0, 0);
         Cursor cursor = toolkit.createCustomCursor(image, hotspot, "Custom Cursor");
 

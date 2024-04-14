@@ -9,10 +9,14 @@ public class Sound {
     Clip clip;
     URL soundURL[] = new URL[30];
     public float volume;
-    public int volumeScale=10;
+    public int volumeScale = 10;
 
     public Sound() {
         soundURL[0] = getClass().getResource("/sound/mainMenu/mainMenu.wav");
+        soundURL[1] = getClass().getResource("/sound/slash.wav");
+        soundURL[2] = getClass().getResource("/sound/mainMenu/hoverChange2.wav");
+        soundURL[3] = getClass().getResource("/sound/mainMenu/fantasy-click.wav");
+        soundURL[4] = getClass().getResource("/sound/story.wav");
     }
 
     private void loadSound(URL url) {
@@ -30,7 +34,7 @@ public class Sound {
         loadSound(soundURL[i]);
     }
 
-    public void loop(){
+    public void loop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
@@ -40,11 +44,10 @@ public class Sound {
         }
     }
 
-    public void stop(){
-        clip.stop();
-    }
+
     public void setVolume(int volumeScale) {
-        switch (volumeScale){
+
+        switch (volumeScale) {
             case 0:
                 volume = -80f;
                 break;
